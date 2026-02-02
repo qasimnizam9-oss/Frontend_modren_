@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modern Website</title>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Muhammad Qasim Nizam</h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+
+        <section class="hero-content">
+            <div class="left-side">
+                <img src="title_image.png" alt="Data Illustration">
+            </div>
+            <div class="right-side">
+    <span class="badge">OUR MODERN WEBSITE</span>
+    <h1>We are the Best Website Developer Company</h1>
+    
+    <button class="cta-btn" id="welcomeBtn">Welcome</button>
+
+    <div id="welcomeNote" class="welcome-message">
+        <h3>Hello! 👋</h3>
+        <p>Thank you for visiting. We are thrilled to have you here and look forward to building something amazing together!</p>
+        <button id="closeBtn">Close</button>
+    </div>
+</div>
+
+
+            </div>
+        </section>
+    </header>
+
+
+
+    <script>
+    const welcomeBtn = document.getElementById('welcomeBtn');
+    const welcomeNote = document.getElementById('welcomeNote');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // Show the note
+    welcomeBtn.onclick = function() {
+        welcomeNote.style.display = 'block';
+    }
+
+    // Hide the note
+    closeBtn.onclick = function() {
+        welcomeNote.style.display = 'none';
+    }
+</script>
+</body>
+</html>

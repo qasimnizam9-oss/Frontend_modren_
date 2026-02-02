@@ -1,0 +1,447 @@
+/* 1. GLOBAL RESET - This removes the white space on the right and top */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 2. THE HEADER & BACKGROUND */
+.site-header {
+    width: 100%;
+    min-height: 100vh; /* Ensures the background covers the full height */
+    background: linear-gradient(135deg, #008ba3 0%, #004e92 100%);
+    color: white;
+}
+
+/* 3. NAVIGATION BAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%; /* Side padding for the logo and menu */
+}
+
+.logo h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* 4. HERO SECTION (LAYOUT) */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 8%;
+    min-height: 80vh; /* Positions content in the middle of the screen */
+}
+
+/* 5. LEFT SIDE (IMAGE) */
+.left-side {
+    flex: 1; /* Takes half the width */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.left-side img {
+    width: 120%; /* Makes image larger */
+    max-width: 700px; /* Prevents it from becoming too huge */
+    height: auto;
+    /* Optional: Adds a slight 3D shadow like your image */
+    filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.2)); 
+}
+
+/* 6. RIGHT SIDE (TEXT) */
+.right-side {
+    flex: 1; /* Takes the other half */
+    padding-left: 50px;
+}
+
+.right-side h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.right-side p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 7. BUTTON STYLING */
+button {
+    background-color: white;
+    color: #004e92;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* The Message Box (Hidden by default) */
+.welcome-message {
+    display: none; /* This hides it initially */
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    animation: fadeIn 0.5s ease;
+}
+
+/* A simple animation to make it look smooth */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#closeBtn {
+    margin-top: 10px;
+    padding: 5px 15px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* SERVICES PAGE SPECIFIC STYLES */
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.services-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.services-header p {
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 3-Column Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* Glassmorphism Card Effect */
+.service-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-card .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00e5ff; /* Bright cyan for contrast */
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+
+/* About Scetion styles */
+
+/* ABOUT PAGE SPECIFIC STYLES */
+
+.about-section {
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.subtitle {
+    color: #00e5ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+/* Stats Layout */
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.stat-item h2 {
+    font-size: 2.5rem;
+    color: #00e5ff;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: white;
+}
+
+.about-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-visual img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    /* This creates a floating 3D effect */
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+/* --- About Section Styling --- */
+.about-section {
+    padding: 60px 8%;
+    min-height: 100vh;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Key for responsiveness */
+}
+
+.about-text, .about-visual {
+    flex: 1;
+    min-width: 300px; /* Forces stacking on small screens */
+}
+
+/* Hidden content styling */
+.hidden-content {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #00e5ff;
+    border-radius: 5px;
+    animation: fadeIn 0.4s ease;
+}
+
+/* --- Responsive Stats --- */
+.stats {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.stat-item h2 {
+    font-size: 2.5rem;
+    color: #00e5ff;
+}
+
+/* --- Media Query for 100% Mobile Response --- */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .about-visual img {
+        max-width: 80%;
+        margin-top: 30px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* CONTACT PAGE STYLES */
+
+.contact-section {
+    padding: 60px 8%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    width: 100%;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.info-details {
+    margin-top: 30px;
+}
+
+.info-details p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Form Glassmorphism Card */
+.contact-form-wrapper {
+    flex: 1;
+   background: rgba(180, 168, 168, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #00e5ff;
+}
+
+.input-group input, 
+.input-group textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: white;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: #00e5ff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #00e5ff;
+    color: #003366;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: white;
+    transform: scale(1.02);
+}
+
